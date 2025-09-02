@@ -1,0 +1,8 @@
+rooling update is a when devlopment team make new changes in the application  and make a docker image that should be deploy in the existing application in kubernetes 
+
+-  command to check the container name in existing deployment pod 
+
+      - kubectl get deployment nginx-deployment -o yaml   --> to check the container in the deployment pod
+
+
+--  kubectl set image deployment/nginx-deployment nginx-container=nginx:1.19   -> updating the latest image 
