@@ -1,0 +1,27 @@
+
+
+ =============================================================================
+
+    Day 2: Debugging and Optimizing RAG Systems with Qwen Code
+🚨 Crisis at AWS Compliance Division - 10:00 AM
+
+"Our RAG system for AWS compliance is a disaster! It returns wrong answers 55% of the time. Auditors are coming next week. If we fail, we lose our $50M government contract!"
+
+Your Mission
+Transform a failing RAG system from 45% to 90%+ accuracy using systematic debugging with Qwen Code
+
+❌ Current RAG System
+45% accuracy
+Returns irrelevant chunks
+Misses critical info
+Hallucinating answers
+✅ After Optimization
+90%+ accuracy
+Precise retrieval
+Complete answers
+Audit-ready responses
+RAG Optimization Toolkit
+🔍 Fix 1: Smart Chunking Strategy
+🏷️ Fix 2: Metadata Filtering
+🔀 Fix 3: Hybrid Search
+📝 Fix 4: Query Enhancement
