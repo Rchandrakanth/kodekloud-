@@ -1,0 +1,57 @@
+
+======================================================================================
+🔍 Problem 1: Secrets Reference Error
+The Hidden Issue
+The frontend deployment is unable to connect to the database with an error 'Access denied for user'. The secret exists but contains corrupted base64 data - something generic AI would have a hard time detecting!
+
+🤖 Use Qwen to Diagnose
+In your Qwen session, ask:
+
+📋
+The frontend deployment in the delta namespace is showing 
+'Access denied for user' error. Please diagnose the exact issue by:
+
+1. Accessing the frontend application using the controlplane's internal IP 
+   (where the app is exposed on NodePort).
+2. Inspecting the Kubernetes Secrets.
+3. Decoding the secret contents to verify the database credentials 
+   and identify the root cause of the authentication failure.
+
+Note: Do not perform any operations that modify the database itself; 
+only update the Kubernetes Secret if needed.
+    
+Qwen will:
+
+Check pod events for specific errors
+Decode and validate the credentials
+Identify any corruption or mismatch
+✅ Issue should be fixed now.
+Check the webapp frontend UI:
+
+========================================================================
+
+The Invisible Wall
+Frontend can't reach the backend API. Generic AI: "Check firewall rules, verify service endpoints..." But it's actually a misconfigured NetworkPolicy!
+
+🤖 Network Debugging with Qwen
+Ask Qwen:
+
+My entire application is deployed in the beta namespace. The frontend pods cannot communicate with the backend service in the same namespace. Please check if there are any NetworkPolicies in the beta namespace that could be blocking this traffic. If you find a NetworkPolicy causing the issue, modify or remove it to allow frontend-to-backend communication.
+
+Notes:
+- It's safe to delete unnecessary resources in the beta namespace if they are blocking traffic.
+- The webapp is exposed via a NodePort on the remote control plane's internal IP, and external access works fine — the issue is only between frontend pods and backend service.
+✅ Fix Network Access
+Qwen will identify and fix the NetworkPolicy!
+
+"Access the webapp frontend UI by navigating to the top right of the terminal to 'Webapp Frontend' button"
+
+
+     commands:-
+      -  kubectl get networkpolicies -n beta
+       - kubectl describe networkpolicy default-deny-all -n beta 
+       -  kubectl delete networkpolicy default-deny-all -n beta
+
+==============================================================================
+
+
